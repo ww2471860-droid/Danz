@@ -1,0 +1,55 @@
+/* styles.css */
+/* Custom styles di luar Tailwind agar tampilannya makin premium & tidak terasa AI */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wallet-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.15);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s backwards;
+}
+
+#hamburger {
+    transition: all 0.3s ease;
+}
+
+.modal-content {
+    animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Glass effect tambahan untuk elemen hero */
+.glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+}

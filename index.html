@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PulsePay - Top up e-wallet instan, elegan, dan premium. DANA, OVO, GoPay, ShopeePay &amp; lainnya.">
+    <title>Yanto store• Top Up E-Wallet Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0a] text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-2">
+                <div class="w-8 h-8 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-xl font-bold">P</div>
+                <h1 class="text-2xl font-semibold tracking-[-1px]">Yanto store</h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#layanan" onclick="smoothScrollTo('layanan')" class="hover:text-cyan-400 transition-colors">Layanan</a>
+                <a href="#cara-kerja" onclick="smoothScrollTo('cara-kerja')" class="hover:text-cyan-400 transition-colors">Cara Kerja</a>
+                <a href="#keunggulan" onclick="smoothScrollTo('keunggulan')" class="hover:text-cyan-400 transition-colors">Keunggulan</a>
+                <a href="#testimoni" onclick="smoothScrollTo('testimoni')" class="hover:text-cyan-400 transition-colors">Testimoni</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <button onclick="showLoginModal()" 
+                        class="hidden sm:flex items-center px-6 py-2.5 text-sm font-medium border border-white/20 rounded-3xl hover:border-white/40 transition-all">
+                    Masuk
+                </button>
+                <button onclick="showTopupModal()" 
+                        class="bg-white text-black px-7 py-2.5 rounded-3xl text-sm font-semibold flex items-center gap-x-2 hover:scale-105 transition-all">
+                    <span>Top Up Sekarang</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="md:hidden w-11 h-11 flex items-center justify-center">
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-t border-white/10 px-6 py-6">
+            <div class="flex flex-col gap-y-6 text-lg font-medium">
+                <a href="#layanan" onclick="smoothScrollTo('layanan');closeMobileMenu()" class="py-2">Layanan</a>
+                <a href="#cara-kerja" onclick="smoothScrollTo('cara-kerja');closeMobileMenu()" class="py-2">Cara Kerja</a>
+                <a href="#keunggulan" onclick="smoothScrollTo('keunggulan');closeMobileMenu()" class="py-2">Keunggulan</a>
+                <a href="#testimoni" onclick="smoothScrollTo('testimoni');closeMobileMenu()" class="py-2">Testimoni</a>
+                <div class="pt-4 border-t border-white/10">
+                    <button onclick="showLoginModal();closeMobileMenu()" class="w-full py-4 text-left text-cyan-400">Masuk ke Akun</button>
+                    <button onclick="showTopupModal();closeMobileMenu()" class="w-full mt-3 bg-white text-black py-4 rounded-3xl font-semibold">Top Up Instan</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 max-w-screen-2xl mx-auto px-6">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-x-2 bg-white/5 text-white/70 text-sm px-4 h-9 rounded-3xl mb-6">
+                    <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                    LIVE • 2.847 top up hari ini
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-semibold tracking-[-2px] leading-none mb-6">
+                    Top up e-wallet.<br>
+                    <span class="bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent">Elegan. Instan.</span><br>
+                    Berkelas.
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-white/70 max-w-lg mb-10">
+                    Tidak ada drama. Hanya pengalaman premium. 
+                    DANA, OVO, GoPay, ShopeePay — langsung terisi dalam 10 detik.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="showTopupModal()" 
+                            class="bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-semibold px-10 py-6 rounded-3xl text-lg flex items-center gap-x-3 hover:shadow-2xl hover:shadow-cyan-500/30 transition-all">
+                        Mulai Top Up
+                        <span class="text-2xl">→</span>
+                    </button>
+                    
+                    <button onclick="smoothScrollTo('layanan')" 
+                            class="border border-white/30 hover:border-white/60 font-medium px-8 py-6 rounded-3xl text-lg transition-all">
+                        Lihat semua e-wallet
+                    </button>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-x-8 text-sm">
+                    <div class="flex -space-x-4">
+                        <div class="w-6 h-6 bg-purple-600 rounded-2xl flex items-center justify-center text-xs ring-2 ring-[#0a0a0a]">D</div>
+                        <div class="w-6 h-6 bg-emerald-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-[#0a0a0a]">O</div>
+                        <div class="w-6 h-6 bg-blue-600 rounded-2xl flex items-center justify-center text-xs ring-2 ring-[#0a0a0a]">G</div>
+                    </div>
+                    <p class="text-white/60">Didukung oleh <span class="font-medium text-white">DANA • OVO • GoPay • ShopeePay • LinkAja</span></p>
+                    <div class="h-3 w-px bg-white/20"></div>
+                    <p class="flex items-center gap-x-1 text-emerald-400">
+                        <span class="text-xl">✓</span> Terjamin 100% aman
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Hero visual (mock phone) -->
+            <div class="md:col-span-5 relative flex justify-center">
+                <div class="relative w-72 md:w-80 aspect-[9/18] bg-black rounded-[3rem] shadow-2xl shadow-cyan-500/20 border border-white/10 p-3">
+                    <div class="bg-[#111] h-full rounded-[2.5rem] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+                        <!-- Fake screen content -->
+                        <div class="text-cyan-400 text-3xl font-bold mb-2">Rp250.000</div>
+                        <div class="text-white/70 text-sm mb-8">Saldo DANA kamu sudah bertambah</div>
+                        
+                        <div class="w-40 h-40 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-3xl flex items-center justify-center border border-cyan-400/30">
+                            <div class="text-6xl">📱</div>
+                        </div>
+                        
+                        <div class="absolute bottom-8 left-8 right-8 bg-white/5 backdrop-blur-xl rounded-2xl py-3 px-5 flex items-center justify-between text-xs">
+                            <div>Top up berhasil</div>
+                            <div class="text-emerald-400">+10 detik lalu</div>
+                        </div>
+                        
+                        <!-- Subtle glow -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-cyan-400/10 via-transparent to-transparent pointer-events-none"></div>
+                    </div>
+                </div>
+                
+                <!-- Floating badges -->
+                <div class="absolute -top-4 -left-4 bg-white/5 backdrop-blur-2xl text-xs px-4 h-8 rounded-3xl flex items-center border border-white/10 shadow-xl">
+                    0,5% fee
+                </div>
+                <div class="absolute -bottom-6 right-8 bg-white/5 backdrop-blur-2xl text-xs px-4 h-8 rounded-3xl flex items-center border border-white/10 shadow-xl">
+                    24/7
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- LAYANAN / E-WALLET CARDS -->
+    <section id="layanan" class="max-w-screen-2xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="uppercase text-xs tracking-[1px] text-cyan-400">Pilih e-wallet kamu</span>
+                <h2 class="text-4xl font-semibold tracking-tight">Semua wallet. Satu tempat.</h2>
+            </div>
+            <a href="#" onclick="showTopupModal()" class="hidden md:flex items-center text-sm font-medium group">
+                Lihat semua 
+                <span class="ml-2 transition-transform group-hover:translate-x-1">→</span>
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <!-- Card 1 DANA -->
+            <div onclick="selectWallet(this, 'DANA', '#7e22ce')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-purple-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#7e22ce] text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-active:scale-95">D</div>
+                <h3 class="font-semibold text-2xl">DANA</h3>
+                <p class="text-white/60 text-sm mt-1">Top up mulai Rp10.000</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+            
+            <!-- Card 2 OVO -->
+            <div onclick="selectWallet(this, 'OVO', '#00a85a')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-emerald-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#00a85a] text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-active:scale-95">O</div>
+                <h3 class="font-semibold text-2xl">OVO</h3>
+                <p class="text-white/60 text-sm mt-1">Top up mulai Rp10.000</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+            
+            <!-- Card 3 GoPay -->
+            <div onclick="selectWallet(this, 'GoPay', '#00a2e8')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-blue-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#00a2e8] text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-active:scale-95">G</div>
+                <h3 class="font-semibold text-2xl">GoPay</h3>
+                <p class="text-white/60 text-sm mt-1">Top up mulai Rp10.000</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+            
+            <!-- Card 4 ShopeePay -->
+            <div onclick="selectWallet(this, 'ShopeePay', '#ee4d2d')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-orange-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#ee4d2d] text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-active:scale-95">S</div>
+                <h3 class="font-semibold text-2xl">ShopeePay</h3>
+                <p class="text-white/60 text-sm mt-1">Top up mulai Rp10.000</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+            
+            <!-- Card 5 LinkAja -->
+            <div onclick="selectWallet(this, 'LinkAja', '#e30613')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-red-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#e30613] text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-active:scale-95">L</div>
+                <h3 class="font-semibold text-2xl">LinkAja</h3>
+                <p class="text-white/60 text-sm mt-1">Top up mulai Rp10.000</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+            
+            <!-- Card 6 QRIS -->
+            <div onclick="selectWallet(this, 'QRIS', '#00b8a9')" 
+                 class="wallet-card group bg-zinc-900 hover:bg-zinc-800 border border-transparent hover:border-teal-500 rounded-3xl p-6 cursor-pointer transition-all duration-300">
+                <div class="h-12 w-12 bg-[#00b8a9] text-white rounded-2xl flex items-center justify-center text-2xl mb-8 group-active:scale-95">📱</div>
+                <h3 class="font-semibold text-2xl">QRIS</h3>
+                <p class="text-white/60 text-sm mt-1">Semua bank &amp; e-wallet</p>
+                <div class="mt-6 text-xs bg-white/10 inline-block px-3 py-1 rounded-2xl">Instant • 0% fee</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan" class="bg-white/5 py-20">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center md:text-left">
+                    <div class="text-cyan-400 text-5xl mb-4">01</div>
+                    <h3 class="text-2xl font-semibold mb-2">10 detik terisi</h3>
+                    <p class="text-white/60">Proses otomatis. Tidak perlu tunggu konfirmasi manual.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="text-cyan-400 text-5xl mb-4">02</div>
+                    <h3 class="text-2xl font-semibold mb-2">Keamanan bank-level</h3>
+                    <p class="text-white/60">Enkripsi end-to-end. Tidak ada data tersimpan di server.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="text-cyan-400 text-5xl mb-4">03</div>
+                    <h3 class="text-2xl font-semibold mb-2">Harga paling kompetitif</h3>
+                    <p class="text-white/60">Tanpa markup tersembunyi. Gen Z approved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section id="cara-kerja" class="max-w-screen-2xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <span class="uppercase text-xs tracking-widest text-cyan-400">3 langkah saja</span>
+            <h2 class="text-4xl font-semibold tracking-tight">Begitu mudahnya</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 relative">
+            <div class="relative bg-zinc-900 rounded-3xl p-8">
+                <div class="absolute -top-4 -left-4 w-8 h-8 bg-cyan-400 text-black rounded-2xl flex items-center justify-center font-bold">1</div>
+                <h4 class="font-semibold text-xl mb-3">Pilih e-wallet &amp; nominal</h4>
+                <p class="text-white/70">Klik kartu favoritmu, pilih jumlah yang kamu mau.</p>
+            </div>
+            <div class="relative bg-zinc-900 rounded-3xl p-8">
+                <div class="absolute -top-4 -left-4 w-8 h-8 bg-cyan-400 text-black rounded-2xl flex items-center justify-center font-bold">2</div>
+                <h4 class="font-semibold text-xl mb-3">Masukkan nomor HP</h4>
+                <p class="text-white/70">Hanya 1 nomor yang terdaftar di e-wallet kamu.</p>
+            </div>
+            <div class="relative bg-zinc-900 rounded-3xl p-8">
+                <div class="absolute -top-4 -left-4 w-8 h-8 bg-cyan-400 text-black rounded-2xl flex items-center justify-center font-bold">3</div>
+                <h4 class="font-semibold text-xl mb-3">Bayar &amp; selesai</h4>
+                <p class="text-white/70">QRIS, transfer, atau e-wallet lain. Saldo langsung naik.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="max-w-screen-2xl mx-auto px-6 py-20 bg-white/5">
+        <h2 class="text-4xl font-semibold tracking-tight text-center mb-12">Yang mereka bilang</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 rounded-3xl p-8">
+                <p class="italic text-white/80">"UI-nya bersih banget. Kayak aplikasi premium luar negeri. Top up DANA 100rb cuma 8 detik. Gila."</p>
+                <div class="mt-8 flex items-center gap-x-3">
+                    <div class="w-8 h-8 bg-zinc-700 rounded-2xl"></div>
+                    <div>
+                        <div class="font-medium">@nathaliesafitri</div>
+                        <div class="text-xs text-white/50">Jakarta • 2 jam lalu</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-zinc-900 rounded-3xl p-8">
+                <p class="italic text-white/80">"Akhirnya ada platform top up yang ga alay. Minimalis, elegan, dan cepat. Udah langganan ShopeePay tiap minggu."</p>
+                <div class="mt-8 flex items-center gap-x-3">
+                    <div class="w-8 h-8 bg-zinc-700 rounded-2xl"></div>
+                    <div>
+                        <div class="font-medium">@rizkyfauzi</div>
+                        <div class="text-xs text-white/50">Bandung • Kemarin</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-zinc-900 rounded-3xl p-8">
+                <p class="italic text-white/80">"Bener-bener beda dari yang lain. Feel-nya Gen Z tapi tetap berkelas. 10/10 buat daily top up."</p>
+                <div class="mt-8 flex items-center gap-x-3">
+                    <div class="w-8 h-8 bg-zinc-700 rounded-2xl"></div>
+                    <div>
+                        <div class="font-medium">@alifahmad</div>
+                        <div class="text-xs text-white/50">Surabaya • 5 jam lalu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOP UP MODAL -->
+    <div onclick="if(event.target.id === 'topup-modal')hideTopupModal()" 
+         id="topup-modal"
+         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center">
+        
+        <div onclick="event.stopImmediatePropagation()" 
+             class="bg-zinc-900 rounded-3xl max-w-md w-full mx-4 overflow-hidden">
+            
+            <div class="px-6 pt-6 pb-4 flex items-center justify-between border-b border-white/10">
+                <h3 id="modal-wallet-name" class="text-2xl font-semibold">Top Up</h3>
+                <button onclick="hideTopupModal()" class="text-white/40 hover:text-white">✕</button>
+            </div>
+            
+            <div class="p-6">
+                <!-- Selected wallet -->
+                <div id="modal-wallet-selected" class="flex items-center gap-x-4 mb-8"></div>
+                
+                <label class="text-xs uppercase tracking-widest mb-2 block">Nomor HP / Email yang terdaftar</label>
+                <input id="phone-input" 
+                       type="tel" 
+                       placeholder="0812-3456-7890"
+                       class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-5 text-lg focus:outline-none focus:border-cyan-400">
+                
+                <label class="text-xs uppercase tracking-widest mt-8 mb-3 block">Pilih nominal</label>
+                <div class="grid grid-cols-3 gap-3 mb-6" id="nominal-buttons">
+                    <!-- JS akan isi -->
+                </div>
+                
+                <div class="flex justify-between text-sm mb-2">
+                    <span class="text-white/60">Total yang dibayar</span>
+                    <span id="total-amount" class="font-semibold text-xl">Rp 0</span>
+                </div>
+                
+                <button onclick="processPayment()" 
+                        id="pay-button"
+                        class="w-full bg-gradient-to-r from-cyan-400 to-blue-600 h-14 text-black rounded-3xl font-semibold text-lg mt-2 flex items-center justify-center">
+                    Bayar Sekarang
+                </button>
+                
+                <p class="text-center text-[10px] text-white/40 mt-6">Pembayaran aman dengan enkripsi 256-bit</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div onclick="if(event.target.id === 'success-modal')hideSuccessModal()" 
+         id="success-modal"
+         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[110] flex items-center justify-center">
+        <div class="bg-white text-black rounded-3xl max-w-xs w-full mx-4 text-center p-8">
+            <div class="mx-auto w-16 h-16 bg-emerald-100 rounded-3xl flex items-center justify-center text-4xl mb-6">🎉</div>
+            <h2 class="text-3xl font-semibold mb-1">Top Up Berhasil!</h2>
+            <p id="success-detail" class="text-emerald-600">Rp 100.000 telah masuk ke DANA kamu</p>
+            <p class="text-xs text-black/60 mt-8">Cek saldo sekarang di aplikasi e-wallet kamu</p>
+            <button onclick="hideSuccessModal()" 
+                    class="mt-8 w-full py-4 bg-black text-white rounded-3xl">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL (minimal) -->
+    <div onclick="if(event.target.id === 'login-modal')hideLoginModal()" 
+         id="login-modal"
+         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 rounded-3xl w-full max-w-sm mx-4 p-8">
+            <h2 class="text-2xl font-semibold mb-6">Masuk ke PulsePay</h2>
+            <input type="email" placeholder="Email atau nomor HP" class="w-full mb-4 bg-white/5 border border-white/10 rounded-3xl px-6 py-5">
+            <input type="password" placeholder="Password" class="w-full mb-8 bg-white/5 border border-white/10 rounded-3xl px-6 py-5">
+            <button onclick="fakeLogin()" class="w-full h-14 bg-white text-black rounded-3xl font-semibold">Masuk</button>
+            <p class="text-center text-xs mt-6 text-white/40">Belum punya akun? <span onclick="hideLoginModal()" class="underline">Daftar gratis</span></p>
+        </div>
+    </div>
+
+    <footer class="bg-black py-16 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 text-white/60 text-sm">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
+                <div class="flex items-center gap-x-2">
+                    <div class="w-6 h-6 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-lg font-bold">P</div>
+                    <span class="font-semibold text-white">PulsePay</span>
+                </div>
+                <p>© 2026 PulsePay Indonesia • Semua hak dilindungi</p>
+                <div class="flex gap-x-6">
+                    <a href="#" class="hover:text-white">Instagram</a>
+                    <a href="#" class="hover:text-white">TikTok</a>
+                    <a href="#" class="hover:text-white">X</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
